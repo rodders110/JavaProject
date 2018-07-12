@@ -16,4 +16,20 @@ public enum Species {
         this.name = name;
         this.aggression = aggression;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAggression() {
+        return aggression;
+    }
+
+    public void setAggression(int aggression) {
+        this.aggression = aggression;
+    }
 }
