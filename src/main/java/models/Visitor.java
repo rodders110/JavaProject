@@ -29,9 +29,9 @@ public class Visitor {
         this.name = name;
     }
 
-    private void feed(Dinosaur dinosaur, Enum<FoodType> foodTypeEnum ){
+    private void feed(IEat dinosaur, FoodType food){
 
-        dinosaur.eat(foodTypeEnum);
+        dinosaur.eat(food);
 
     }
 

@@ -2,8 +2,6 @@ package models;
 
 public enum FoodType {
 
-
-
     GOAT("Goat", "meat"),
     SHEEP("Sheep", "meat"),
     CARROT("Carrot", "herb"),
