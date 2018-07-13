@@ -1,9 +1,14 @@
 package models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="visitors")
 public class Visitor {
 
     private int id;
     private String  name;
+    private Park park;
 
 
     public Visitor() {
@@ -13,6 +18,9 @@ public class Visitor {
         this.name = name;
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -21,6 +29,7 @@ public class Visitor {
         this.id = id;
     }
 
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -35,5 +44,13 @@ public class Visitor {
 
     }
 
+    @ManyToOne
+    @JoinColumn(name = "park_id", nullable = false)
+    public Park getPark() {
+        return park;
+    }
 
+    public void setPark(Park park) {
+        this.park = park;
+    }
 }
