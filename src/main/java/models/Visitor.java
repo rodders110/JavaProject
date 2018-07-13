@@ -29,7 +29,7 @@ public class Visitor {
         this.name = name;
     }
 
-    private void feed(IEat dinosaur, FoodType food){
+    public void feed(IEat dinosaur, FoodType food){
 
         dinosaur.eat(food);
 
