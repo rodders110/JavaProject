@@ -11,6 +11,7 @@ public class Paddock {
     private int id;
     private int number;
     private int integrity;
+    private Park park;
     private List<Dinosaur> dinosaurs;
 
     public Paddock() {
@@ -72,5 +73,15 @@ public class Paddock {
         for (Dinosaur dino : this.dinosaurs){
             this.integrity -= dino.getSpecies().getAggression();
         }
+    }
+
+    @ManyToOne
+    @JoinColumn(name="park_id", nullable = false)
+    public Park getPark() {
+        return park;
+    }
+
+    public void setPark(Park park) {
+        this.park = park;
     }
 }

@@ -55,7 +55,7 @@ public class Park {
         this.totalVisitors = totalVisitors;
     }
 
-    @Column(name = "paddocks")
+    @OneToMany(mappedBy = "park", fetch = FetchType.LAZY)
     public List<Paddock> getPaddocks() {
         return paddocks;
     }
