@@ -94,4 +94,14 @@ public class Park {
             paddock_To.addDinosaur(dinosaur);
         }
     }
+
+    public boolean checkRampage(){
+        for (Paddock paddock : paddocks){
+            if (paddock.getIntegrity() <= 0){
+                this.setRampage(true);
+            }
+        }
+        return  rampage;
+
+    }
 }
