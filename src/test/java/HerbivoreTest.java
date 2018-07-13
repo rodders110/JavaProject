@@ -20,12 +20,12 @@ public class HerbivoreTest {
     @Test
     public void canEatPlants() {
         minmi.eat(FoodType.CARROT);
-        assertEquals(1, minmi.getBelly().size());
+        assertEquals(1, minmi.getBelly());
     }
 
     @Test
     public void wontEatMeat() {
         minmi.eat(FoodType.SHEEP);
-        assertEquals(0, minmi.getBelly().size());
+        assertEquals(0, minmi.getBelly());
     }
 }

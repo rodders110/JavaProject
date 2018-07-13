@@ -22,6 +22,6 @@ public class VisitorTest {
     @Test
     public void canFeedDinosaur() {
         visitor.feed(dinosaur, FoodType.SHEEP);
-        assertEquals(1, dinosaur.getBelly().size());
+        assertEquals(1, dinosaur.getBelly());
     }
 }

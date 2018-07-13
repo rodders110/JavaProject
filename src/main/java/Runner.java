@@ -33,10 +33,8 @@ public class Runner {
     DBHelper.save(visitor1);
 
     Visitor visitor2 = new Visitor("Curly Girl");
-    visitor1.setPark(park);
+    visitor2.setPark(park);
     DBHelper.save(visitor2);
-
-
 
     }
 

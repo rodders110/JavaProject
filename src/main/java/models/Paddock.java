@@ -1,5 +1,8 @@
 package models;
 
+import db.DBHelper;
+import db.DBPaddock;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -68,11 +71,11 @@ public class Paddock {
         this.integrity = integrity;
     }
 
-    public void rampage(){
-        for (Dinosaur dino : this.dinosaurs){
-            this.integrity -= dino.getSpecies().getAggression();
-        }
-    }
+//    public void rampage(){
+//        for (Dinosaur dino : this.dinosaurs){
+//            this.integrity -= dino.getSpecies().getAggression();
+//        }
+//    }
 
     @ManyToOne
     @JoinColumn(name="park_id", nullable = false)

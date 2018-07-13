@@ -17,8 +17,7 @@ public class Carnivore extends Dinosaur implements IEat {
 
     public void eat(FoodType food){
         if (food.getType().equals("meat")) {
-
-            this.getBelly().add(food);
+             this.setBelly(this.getBelly() + 1);
         }
     }
 

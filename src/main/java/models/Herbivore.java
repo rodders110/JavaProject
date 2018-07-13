@@ -17,7 +17,7 @@ public class Herbivore extends Dinosaur implements IEat {
     public void eat(FoodType food) {
         if (food.getType().equals("herb")) {
 
-            this.getBelly().add(food);
+            this.setBelly(this.getBelly() + 1);
         }
 
     }

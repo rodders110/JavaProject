@@ -21,12 +21,12 @@ public class CarnivoreTest {
     @Test
     public void canEatMeat() {
         raptor.eat(FoodType.SHEEP);
-        assertEquals(1, raptor.getBelly().size());
+        assertEquals(1, raptor.getBelly());
     }
 
     @Test
     public void wontEatPlants() {
         raptor.eat(FoodType.CARROT);
-        assertEquals(0, raptor.getBelly().size());
+        assertEquals(0, raptor.getBelly());
     }
 }

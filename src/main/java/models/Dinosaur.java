@@ -11,13 +11,13 @@ public abstract class Dinosaur {
     private int id;
     private Species species;
     private Boolean inCaptivity;
-    private ArrayList<FoodType> belly;
+    private int belly;
     private Paddock paddock;
 
     public Dinosaur(Species species, Boolean inCaptivity) {
         this.species = species;
         this.inCaptivity = inCaptivity;
-        this.belly = new ArrayList<FoodType>();
+        this.belly = belly;
     }
 
     public Dinosaur() {
@@ -53,11 +53,11 @@ public abstract class Dinosaur {
     }
 
     @Column(name="belly")
-    public ArrayList<FoodType> getBelly() {
+    public int getBelly() {
         return belly;
     }
 
-    public void setBelly(ArrayList<FoodType> belly) {
+    public void setBelly(int belly) {
         this.belly = belly;
     }
 
