@@ -62,7 +62,7 @@ public abstract class Dinosaur {
     }
 
     @ManyToOne
-    @JoinColumn(name = "paddock_id", nullable = true)
+    @JoinColumn(name = "paddock_id", nullable = false)
     public Paddock getPaddock() {
         return paddock;
     }

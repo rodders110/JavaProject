@@ -21,8 +21,6 @@ public class Park {
     public Park(String name) {
         this.name = name;
         this.totalVisitors = 0;
-        this.paddocks = new ArrayList<Paddock>();
-        this.visitors = new ArrayList<Visitor>();
         this.rampage = false;
     }
 

@@ -20,7 +20,6 @@ public class Paddock {
     public Paddock(int number) {
         this.number = number;
         this.integrity = 100;
-        this.dinosaurs = new ArrayList<Dinosaur>();
     }
 
     @Id
@@ -76,7 +75,7 @@ public class Paddock {
     }
 
     @ManyToOne
-    @JoinColumn(name="park_id", nullable = true)
+    @JoinColumn(name="park_id", nullable = false)
     public Park getPark() {
         return park;
     }

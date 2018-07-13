@@ -17,7 +17,7 @@ public class Visitor {
     public Visitor(String name) {
 
         this.name = name;
-        this.park = park;
+        this.park = null;
     }
 
 
@@ -48,7 +48,7 @@ public class Visitor {
     }
 
     @ManyToOne
-    @JoinColumn(name = "park_id", nullable = true)
+    @JoinColumn(name = "park_id", nullable = false)
     public Park getPark() {
         return park;
     }
