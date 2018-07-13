@@ -1,8 +1,11 @@
 package models;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "parks")
 public class Park {
 
     private int id;
@@ -23,6 +26,9 @@ public class Park {
         this.rampage = false;
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -31,6 +37,7 @@ public class Park {
         this.id = id;
     }
 
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -39,6 +46,7 @@ public class Park {
         this.name = name;
     }
 
+    @Column(name = "total_visitors")
     public int getTotalVisitors() {
         return totalVisitors;
     }
@@ -47,6 +55,7 @@ public class Park {
         this.totalVisitors = totalVisitors;
     }
 
+    @OneToMany(mappedBy = "park", fetch = FetchType.LAZY)
     public List<Paddock> getPaddocks() {
         return paddocks;
     }
@@ -55,6 +64,7 @@ public class Park {
         this.paddocks = paddocks;
     }
 
+    @OneToMany(mappedBy = "park", fetch = FetchType.LAZY)
     public List<Visitor> getVisitors() {
         return visitors;
     }
@@ -63,6 +73,7 @@ public class Park {
         this.visitors = visitors;
     }
 
+    @Column(name = "isRampage")
     public boolean isRampage() {
         return rampage;
     }
