@@ -1,5 +1,8 @@
 import db.DBHelper;
+import db.DBPaddock;
 import models.*;
+
+import java.util.List;
 
 public class Runner {
 
@@ -35,6 +38,8 @@ public class Runner {
     Visitor visitor2 = new Visitor("Curly Girl");
     visitor2.setPark(park);
     DBHelper.save(visitor2);
+
+    List<Dinosaur> dinosaursInPaddock = DBPaddock.getDinosInPaddock(paddock2);
 
     }
 
