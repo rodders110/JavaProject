@@ -15,8 +15,11 @@ public class Visitor {
     }
 
     public Visitor(String name) {
+
         this.name = name;
+        this.park = park;
     }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,7 +48,7 @@ public class Visitor {
     }
 
     @ManyToOne
-    @JoinColumn(name = "park_id", nullable = false)
+    @JoinColumn(name = "park_id", nullable = true)
     public Park getPark() {
         return park;
     }

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 @Entity
 @Table(name="dinosaurs")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Dinosaur {
 
     private int id;
@@ -61,7 +62,7 @@ public abstract class Dinosaur {
     }
 
     @ManyToOne
-    @JoinColumn(name = "paddock_id", nullable = false)
+    @JoinColumn(name = "paddock_id", nullable = true)
     public Paddock getPaddock() {
         return paddock;
     }

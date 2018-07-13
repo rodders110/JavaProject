@@ -1,5 +1,10 @@
 package models;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="herbivores")
 public class Herbivore extends Dinosaur implements IEat {
 
     public Herbivore(Species species, Boolean inCaptivity) {

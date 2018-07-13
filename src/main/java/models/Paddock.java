@@ -76,7 +76,7 @@ public class Paddock {
     }
 
     @ManyToOne
-    @JoinColumn(name="park_id", nullable = false)
+    @JoinColumn(name="park_id", nullable = true)
     public Park getPark() {
         return park;
     }
