@@ -5,6 +5,17 @@
     #foreach ($park in $parks)
         <tr>
             <td>$park.getName()</td>
+           <td>
+               <form action="/park/$park.getId()/delete" method="post">
+                   <input type="submit", value="Delete">
+               </form>
+
+           </td>
+            <td>
+                <form action="/park/$park.getId()/update" method="get">
+                    <input type="submit", value="Update">
+                </form>
+            </td>
         </tr>
     #end
 </table>
