@@ -1,11 +1,11 @@
 <p class="pageHeader">New Dinosaur</p>
 
-<form action="/dinosaurs" method="post">
+<form action="/dinosaurs/new" method="post">
 
     <label for="species">Species:</label>
     <select id="species" name="species">
-        #foreach($species in $species)
-        <option value="$species.getName()">$species.getName()</option>
+        #foreach($key in $species.keySet())
+        <option value="$species.get($key)">$key</option>
         #end
     </select>
 
