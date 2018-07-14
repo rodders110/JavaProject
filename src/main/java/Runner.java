@@ -41,6 +41,12 @@ public class Runner {
 
     List<Dinosaur> dinosaursInPaddock = DBPaddock.getDinosInPaddock(paddock2);
 
+    List<Visitor> getAllVisitors = DBHelper.getAll(Visitor.class);
+    List<Dinosaur> getallDinosaurs = DBHelper.getAll(Dinosaur.class);
+    List<Paddock> getAllPaddocks = DBHelper.getAll(Paddock.class);
+    List<Herbivore> getAllHerbivores = DBHelper.getAll(Herbivore.class);
+    List<Carnivore> getallCarnivores = DBHelper.getAll(Carnivore.class);
+
     }
 
 }
