@@ -23,7 +23,7 @@ public class DinoController {
             List<Dinosaur> dinosaurs = DBHelper.getAll(Dinosaur.class);
             model.put("template", "dinosaurs/index.vtl");
             model.put("dinosaurs", dinosaurs);
-            return new ModelAndView(model, "templates/layout.vtl");
+            return new ModelAndView(model, "layout.vtl");
 
         }, new VelocityTemplateEngine());
     }
