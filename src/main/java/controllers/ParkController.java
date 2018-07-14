@@ -1,6 +1,7 @@
 package controllers;
 
 import db.DBHelper;
+import db.Seeds;
 import models.Park;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
@@ -17,6 +18,7 @@ public class ParkController {
         VelocityTemplateEngine velocityTemplateEngine = new VelocityTemplateEngine();
         staticFileLocation("/resources");
         Seeds.seedData();
+        DinoController dinoController = new DinoController();
 
 
         List<Park> parks = DBHelper.getAll(Park.class);
