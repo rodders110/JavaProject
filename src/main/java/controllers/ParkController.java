@@ -89,5 +89,16 @@ public class ParkController {
             return null;
         }, velocityTemplateEngine);
 
+        post("/paddock/new", (req, res) -> {
+            int parkId = Integer.parseInt(req.queryParams("park_id"));
+            int newPadNum = Integer.parseInt(req.queryParams("pad_num"));
+            Park park = DBHelper.find(Park.class, parkId);
+            Paddock newPad = new Paddock(newPadNum);
+            newPad.setPark(park);
+            DBHelper.save(newPad);
+            res.redirect("/");
+            return null;
+        }, velocityTemplateEngine);
+
     }
 }
