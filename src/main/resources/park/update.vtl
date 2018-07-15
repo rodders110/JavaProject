@@ -9,3 +9,19 @@
 
 
 </form>
+
+<table>
+    <tr>
+        <th>Paddocks</th>
+    </tr>
+
+    #foreach ($paddock in $paddocks)
+    <tr>
+        <td>$paddock.getNumber()</td>
+    </tr>
+    #end
+</table>
+
+<form action="/park/$park.getId()/newPaddock" class = "new_paddock"method="get">
+    <input type="submit" value = "add new paddock" class = "new paddock">
+</form>

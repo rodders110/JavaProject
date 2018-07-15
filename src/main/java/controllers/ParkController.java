@@ -1,7 +1,9 @@
 package controllers;
 
 import db.DBHelper;
+import db.DBPark;
 import db.Seeds;
+import models.Paddock;
 import models.Park;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
@@ -34,6 +36,14 @@ public class ParkController {
             return new ModelAndView(model, "layout.vtl");
         }, velocityTemplateEngine);
 
+        get("/park/:id/newPaddock", (req, res) -> {
+            int id = Integer.parseInt(req.params(":id"));
+            HashMap<String, Object> model = new HashMap<>();
+            model.put("template", "paddock/index.vtl");
+            model.put("id", id);
+            return new ModelAndView(model, "layout.vtl");
+        }, velocityTemplateEngine);
+
         get("/park/new", (req, res) -> {
             HashMap<String, Object> model = new HashMap<>();
             model.put("template", "park/create.vtl");
@@ -52,9 +62,11 @@ public class ParkController {
         get("/park/:id/update", (req, res) -> {
             int id = Integer.parseInt(req.params("id"));
             Park park = DBHelper.find(Park.class, id);
+            List<Paddock> paddocks = DBPark.allPaddocks(park);
             HashMap<String, Object> model = new HashMap<>();
             model.put("template", "park/update.vtl");
             model.put("park", park);
+            model.put("paddocks", paddocks);
             return new ModelAndView(model, "layout.vtl");
         }, velocityTemplateEngine);
 
