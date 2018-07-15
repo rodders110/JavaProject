@@ -18,7 +18,7 @@ public class DBPark {
         List<Paddock> result = null;
         try{
             Criteria cr = session.createCriteria(Paddock.class);
-            cr.add(Restrictions.eq("id", park.getId()));
+            cr.add(Restrictions.eq("park_id", park.getId()));
             result = cr.list();
         } catch (HibernateException e){
             e.printStackTrace();

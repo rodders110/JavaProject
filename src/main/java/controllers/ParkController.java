@@ -1,6 +1,7 @@
 package controllers;
 
 import db.DBHelper;
+import db.DBPaddock;
 import db.DBPark;
 import db.Seeds;
 import models.Paddock;
@@ -62,7 +63,7 @@ public class ParkController {
         get("/park/:id/update", (req, res) -> {
             int id = Integer.parseInt(req.params("id"));
             Park park = DBHelper.find(Park.class, id);
-            List<Paddock> paddocks = DBPark.allPaddocks(park);
+            List<Paddock> paddocks = DBPaddock.allPaddocks(park);
             HashMap<String, Object> model = new HashMap<>();
             model.put("template", "park/update.vtl");
             model.put("park", park);

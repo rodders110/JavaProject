@@ -2,6 +2,7 @@ package db;
 
 import models.Dinosaur;
 import models.Paddock;
+import models.Park;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -26,5 +27,20 @@ public class DBPaddock {
             session.close();
         }
         return results;
+    }
+
+    public static List<Paddock> allPaddocks(Park park){
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Paddock> result = null;
+        try{
+            Criteria cr = session.createCriteria(Paddock.class);
+            cr.add(Restrictions.eq("park", park));
+            result = cr.list();
+        } catch (HibernateException e){
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return result;
     }
 }
