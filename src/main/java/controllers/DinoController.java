@@ -87,7 +87,6 @@ public class DinoController {
 
             int paddockId = Integer.parseInt(req.queryParams("paddock"));
             Paddock paddock = DBHelper.find(Paddock.class, paddockId);
-            Species species =  Enum.valueOf(Species.class, req.queryParams("species"));
 
             dinosaur.setPaddock(paddock);
 
