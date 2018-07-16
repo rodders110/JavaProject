@@ -49,7 +49,7 @@ public class Runner {
     List<Carnivore> getallCarnivores = DBHelper.getAll(Carnivore.class);
 
     List<Dinosaur> dinos = DBPaddock.getDinosInPaddock(paddock2);
-    int querytry = dinos.size();
+    String qury = dinos.get(0).getClass().toString();
 
 
 

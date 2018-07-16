@@ -79,8 +79,10 @@ public abstract class Dinosaur {
     public void assignPaddock(Paddock paddock) {
         List<Dinosaur> dinosaurs = DBPaddock.getDinosInPaddock(paddock);
 
-        if (dinosaurs.get(0).getClass() == this.getClass()) {
-            this.paddock = paddock;
+        if ((dinosaurs.size() == 0) || (dinosaurs.get(0).getClass() == this.getClass())) {
+            if((dinosaurs.size() == 0)||(this.getClass().toString().equals("class models.Herbivore"))|| (this.species == dinosaurs.get(0).species)) {
+                this.paddock = paddock;
+            }
         }
     }
 }
