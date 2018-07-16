@@ -53,7 +53,7 @@ public class ParkController {
         get("/park/:id/newPaddock", (req, res) -> {
             int id = Integer.parseInt(req.params(":id"));
             HashMap<String, Object> model = new HashMap<>();
-            model.put("template", "paddock/index.vtl");
+            model.put("template", "paddock/create.vtl");
             model.put("id", id);
             return new ModelAndView(model, "layout.vtl");
         }, velocityTemplateEngine);
