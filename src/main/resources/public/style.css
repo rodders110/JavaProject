@@ -7,25 +7,27 @@ body {
 
 nav {
 
-  height: 400px;
-  margin-bottom: 50px;
+  height: 100px;
+  margin-bottom: 10px;
   margin-left: 10px;
   margin-right: 10px;
 
 }
 
+
+
 ul {
 
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+
   list-style-type: none;
-  margin: 0;
+  margin: 10;
   padding-left:0;
   text-align: center;
   color: lightpink;
   font-size: 20px;
-  font-family: cocotte;
+  font-family: kongtext;
 
 }
 
