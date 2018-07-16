@@ -73,6 +73,7 @@ public abstract class Dinosaur {
 
     public void setPaddock(Paddock paddock) {
 
+
         this.paddock = paddock;
     }
 
@@ -83,6 +84,9 @@ public abstract class Dinosaur {
             if((dinosaurs.size() == 0)||(this.getClass().toString().equals("class models.Herbivore"))|| (this.species == dinosaurs.get(0).species)) {
                 this.paddock = paddock;
             }
+
+            this.paddock = paddock;
+
         }
     }
 }

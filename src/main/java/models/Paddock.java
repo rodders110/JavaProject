@@ -56,7 +56,8 @@ public class Paddock {
 
     public void addDinosaur(Dinosaur dinosaur){
         this.dinosaurs.add(dinosaur);
-    }
+        }
+
 
     public void removeDinosaur(Dinosaur dinosaur){
         this.dinosaurs.remove(dinosaur);
@@ -86,4 +87,5 @@ public class Paddock {
     public void setPark(Park park) {
         this.park = park;
     }
+
 }
