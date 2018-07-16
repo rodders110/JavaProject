@@ -13,6 +13,9 @@ public class Seeds {
         Park park = new Park("Jurassic Park");
         DBHelper.save(park);
 
+        Park park2 = new Park("Triassic Park");
+        DBHelper.save(park2);
+
         Paddock paddock1 = new Paddock(1);
         paddock1.setPark(park);
         DBHelper.save(paddock1);
