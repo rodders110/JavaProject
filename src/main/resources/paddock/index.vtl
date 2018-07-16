@@ -1,4 +1,4 @@
-<div id="parks">
+<div id="paddocks">
 
     <table>
         <tr>
@@ -6,6 +6,14 @@
             <th>Integrity:</th>
             <th>Park:</th>
         </tr>
+        #foreach ($paddock in $paddocks)
+        <tr>
+            <td>$paddock.getNumber()</td>
+            <td>$paddock.getIntegrity()</td>
+            <td>$paddock.getPark()</td>
+
+        </tr>
+        #end
     </table>
 
 
