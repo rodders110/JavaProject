@@ -68,6 +68,8 @@ public abstract class Dinosaur {
     }
 
     public void setPaddock(Paddock paddock) {
-        this.paddock = paddock;
+        if ((paddock.getDinosaurs() == null) || (this.getClass() == paddock.getDinosaurs().get(0).getClass()) || (paddock.getDinosaurs().size() == 0)){
+            this.paddock = paddock;
+        }
     }
 }
