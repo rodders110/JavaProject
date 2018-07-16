@@ -1,3 +1,6 @@
+<div id="parks">
+
+
 <table>
     <tr>
         <th>name</th>
@@ -5,7 +8,7 @@
         <th>Rampage In Progress</th>
     </tr>
     #foreach ($park in $parks)
-        <tr>
+    <tr>
             <td>$park.getName()</td>
             <td>$park.getTotalVisitors()</td>
             <td>$park.isRampage()</td>
@@ -23,3 +26,5 @@
         </tr>
     #end
 </table>
+
+</div>

@@ -5,6 +5,13 @@ body {
 
 }
 
+h1 {
+
+font-family: kongtext;
+font-size: 40px;
+
+}
+
 nav {
 
   height: 100px;
@@ -20,7 +27,6 @@ ul {
 
   display: flex;
   flex-direction: row;
-
   list-style-type: none;
   margin: 10;
   padding-left:0;
@@ -31,9 +37,81 @@ ul {
 
 }
 
+ul a:hover {
+
+  opacity: 0.6;
+
+}
+
+a:hover {
+
+  opacity: 0.6;
+
+}
+
+li {
+
+  margin: 0 10px 10px 0;
+}
+
 a {
 
 color: lightpink;
 font-: 20;
+
+}
+
+.homepage {
+
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+
+}
+
+.parks {
+
+  display: flex;
+
+  background-image: url(https://steamusercontent-a.akamaihd.net/ugc/100601983096545782/129AB940056CC6589E348EF94F4E9F05525C5F35/);
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+
+}
+
+.paddocks {
+
+  display: flex;
+
+  background-image: url(https://steamusercontent-a.akamaihd.net/ugc/100601983096545782/129AB940056CC6589E348EF94F4E9F05525C5F35/);
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+
+}
+
+.dinosaurs {
+
+  display: flex;
+
+  background-image: url(https://i.pinimg.com/736x/bd/76/34/bd763497fff559954cba0eacbd2198cd--perler-beads-bead-patterns.jpg);
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+
+}
+
+tr.parkrow {
+
+  display: flex;
+  flex-direction: column;
+  background: url(https://i.pinimg.com/originals/b0/a3/14/b0a3148d73c66e4153f2bca0f8de9f5f.jpg);
+
+}
+
+footer {
+
+/* background-image: url(https://78.media.tumblr.com/922f61aa75d33cc9ec2fde794450994d/tumblr_njky6hhgP01sdw37zo1_1280.gif); */
 
 }

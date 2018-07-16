@@ -4,6 +4,7 @@ import db.DBHelper;
 import db.DBPaddock;
 import db.DBPark;
 import db.Seeds;
+import models.Dinosaur;
 import models.Paddock;
 import models.Park;
 import spark.ModelAndView;
@@ -34,6 +35,18 @@ public class ParkController {
             List<Park> parks = DBHelper.getAll(Park.class);
             model.put("parks", parks);
             model.put("template", "park/index.vtl");
+            return new ModelAndView(model, "layout.vtl");
+        }, velocityTemplateEngine);
+
+        get ("/home", (req, res) -> {
+            HashMap<String, Object> model = new HashMap<>();
+            List<Park> parks = DBHelper.getAll(Park.class);
+            List<Park> dinosaurs = DBHelper.getAll(Dinosaur.class);
+            List<Park> paddocks = DBHelper.getAll(Paddock.class);
+            model.put("parks", parks);
+            model.put("dinosaurs", dinosaurs);
+            model.put("paddocks", paddocks);
+            model.put("template", "home.vtl");
             return new ModelAndView(model, "layout.vtl");
         }, velocityTemplateEngine);
 
