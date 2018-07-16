@@ -14,11 +14,13 @@ nav {
 
 }
 
+
+
 ul {
 
   display: flex;
   flex-direction: row;
-  
+
   list-style-type: none;
   margin: 10;
   padding-left:0;

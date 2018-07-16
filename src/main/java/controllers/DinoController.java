@@ -54,7 +54,7 @@ public class DinoController {
             List<Paddock> paddocks = DBHelper.getAll(Paddock.class);
             for (Paddock paddock : paddocks){
                 List<Dinosaur> list = DBPaddock.getDinosInPaddock(paddock);
-                if (list.get(0).getClass() != dinosaur.getClass()){
+                if ((list.get(0).getClass() != dinosaur.getClass())){
                     paddocks.remove(paddock);
                 }
             }
