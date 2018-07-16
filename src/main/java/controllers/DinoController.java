@@ -1,6 +1,7 @@
 package controllers;
 
 import db.DBHelper;
+import db.DBPaddock;
 import models.*;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
@@ -34,7 +35,7 @@ public class DinoController {
             HashMap<String, Object> model = new HashMap<>();
             List<Paddock> paddocks = DBHelper.getAll(Paddock.class);
             HashMap<String, String> species = new HashMap<>();
-            species.put("Tyrannosaurus Rex", "T-REX");
+            species.put("Tyrannosaurus Rex", "TREX");
             species.put("Velociraptor", "RAPTOR");
             species.put("Allosaurus", "ALLOSAURUS");
             species.put("Stegosaurus", "STEGOSAURUS");
@@ -51,6 +52,12 @@ public class DinoController {
             HashMap<String, Object> model = new HashMap<>();
             Dinosaur dinosaur = DBHelper.find(Dinosaur.class, dinosaurId);
             List<Paddock> paddocks = DBHelper.getAll(Paddock.class);
+            for (Paddock paddock : paddocks){
+                List<Dinosaur> list = DBPaddock.getDinosInPaddock(paddock);
+                if (list.get(0).getClass() != dinosaur.getClass()){
+                    paddocks.remove(paddock);
+                }
+            }
             model.put("paddocks", paddocks);
             model.put("dinosaur", dinosaur);
             model.put("template", "dinosaurs/edit.vtl");
@@ -63,11 +70,11 @@ public class DinoController {
             Species species =  Enum.valueOf(Species.class, req.queryParams("species"));
             if (species == Species.TREX || species == Species.RAPTOR || species == Species.ALLOSAURUS){
                 Carnivore newCarnivore = new Carnivore(species, true);
-                newCarnivore.setPaddock(paddock);
+                newCarnivore.assignPaddock(paddock);
                 DBHelper.save(newCarnivore);
             } else {
                 Herbivore newHerbivore = new Herbivore(species, true);
-                newHerbivore.setPaddock(paddock);
+                newHerbivore.assignPaddock(paddock);
                 DBHelper.save(newHerbivore);
             }
             res.redirect("/dinosaurs");

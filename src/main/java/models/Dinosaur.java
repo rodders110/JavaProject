@@ -1,7 +1,11 @@
 package models;
 
+import db.DBDino;
+import db.DBPaddock;
+
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="dinosaurs")
@@ -68,7 +72,14 @@ public abstract class Dinosaur {
     }
 
     public void setPaddock(Paddock paddock) {
-        if ((paddock.getDinosaurs() == null) || (this.getClass() == paddock.getDinosaurs().get(0).getClass()) || (paddock.getDinosaurs().size() == 0)){
+
+        this.paddock = paddock;
+    }
+
+    public void assignPaddock(Paddock paddock) {
+        List<Dinosaur> dinosaurs = DBPaddock.getDinosInPaddock(paddock);
+
+        if (dinosaurs.get(0).getClass() == this.getClass()) {
             this.paddock = paddock;
         }
     }

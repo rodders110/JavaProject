@@ -1,3 +1,4 @@
+import db.DBDino;
 import db.DBHelper;
 import db.DBPaddock;
 import models.*;
@@ -46,6 +47,12 @@ public class Runner {
     List<Paddock> getAllPaddocks = DBHelper.getAll(Paddock.class);
     List<Herbivore> getAllHerbivores = DBHelper.getAll(Herbivore.class);
     List<Carnivore> getallCarnivores = DBHelper.getAll(Carnivore.class);
+
+    List<Dinosaur> dinos = DBPaddock.getDinosInPaddock(paddock2);
+    int querytry = dinos.size();
+
+
+
 
     }
 
