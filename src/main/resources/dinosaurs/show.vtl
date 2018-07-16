@@ -1,0 +1,24 @@
+<p class="pageHeader">View Dinosaur</p>
+
+<form action="/dinosaurs/$dinosaur.getId()" method="get">
+
+    <div class="container">
+
+        <table>
+
+            <tr>
+                <th>Species</th>
+                <th>In Captivity</th>
+                <th>Paddock</th>
+            </tr>
+            <tr>
+                <td>$dinosaur.getSpecies().getName()</td>
+                <td>$dinosaur.getInCaptivity()</td>
+                <td>$dinosaur.getPaddock().getNumber()</td>
+            </tr>
+        </table>
+    </div>
+</form>
+<form action="/dinosaurs/$dinosaur.getId()/delete" method="post">
+    <input type="submit" value="Delete" class="button"/>
+</form>

@@ -1,10 +1,25 @@
 <table>
     <tr>
         <th>name</th>
+        <th>Total Visited</th>
+        <th>Rampage In Progress</th>
     </tr>
     #foreach ($park in $parks)
         <tr>
             <td>$park.getName()</td>
+            <td>$park.getTotalVisitors()</td>
+            <td>$park.isRampage()</td>
+           <td>
+               <form action="/park/$park.getId()/delete" method="post">
+                   <input type="submit", value="Delete">
+               </form>
+
+           </td>
+            <td>
+                <form action="/park/$park.getId()/update" method="get">
+                    <input type="submit", value="Update">
+                </form>
+            </td>
         </tr>
     #end
 </table>

@@ -1,0 +1,21 @@
+body {
+
+  background-color: MediumSeaGreen;
+  font-family: gill sans;
+
+}
+
+nav {
+
+  height: 400px;
+  margin-bottom: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
+a {
+
+color: lightpink;
+
+}

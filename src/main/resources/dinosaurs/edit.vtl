@@ -1,0 +1,23 @@
+<p class="pageHeader">Transfer Dinosaur</p>
+
+<form action="/dinosaurs/$dinosaur.getId()/edit" method="post">
+
+    <table>
+
+        <tr>$dinosaur.getSpecies().getName()</tr>
+        <br>
+
+
+    <label for="paddock">Paddock:</label>
+    <select id="paddock" name="paddock">
+        #foreach($paddock in $paddocks)
+        <option value="$paddock.getId()">$paddock.getNumber()</option>
+        #end
+    </select>
+
+    </table>
+
+    <input type="submit" value="Save" class="button"/>
+
+
+</form>
