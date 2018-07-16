@@ -7,6 +7,7 @@ import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import sun.jvm.hotspot.debugger.cdbg.EnumType;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -52,13 +53,19 @@ public class DinoController {
             HashMap<String, Object> model = new HashMap<>();
             Dinosaur dinosaur = DBHelper.find(Dinosaur.class, dinosaurId);
             List<Paddock> paddocks = DBHelper.getAll(Paddock.class);
-            for (Paddock paddock : paddocks){
-                List<Dinosaur> list = DBPaddock.getDinosInPaddock(paddock);
+            List<Paddock> paddockClone = paddocks;
+
+            for (int i = paddocks.size() -1; i >= 0; --i){
+                List<Dinosaur> list = DBPaddock.getDinosInPaddock(paddocks.get(i));
+                if (list.size() > 0){
+                    String type = list.get(0).getClass().toString();
+                    String type2 = dinosaur.getClass().toString();
                 if ((list.get(0).getClass() != dinosaur.getClass())){
-                    paddocks.remove(paddock);
+                    paddockClone.remove(paddocks.get(i));
+                }
                 }
             }
-            model.put("paddocks", paddocks);
+            model.put("paddocks", paddockClone);
             model.put("dinosaur", dinosaur);
             model.put("template", "dinosaurs/edit.vtl");
             return new ModelAndView(model, "layout.vtl");
