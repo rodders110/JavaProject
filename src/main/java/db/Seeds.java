@@ -21,6 +21,10 @@ public class Seeds {
         paddock2.setPark(park);
         DBHelper.save(paddock2);
 
+        Paddock paddock3 = new Paddock(3);
+        paddock3.setPark(park);
+        DBHelper.save(paddock3);
+
         Carnivore raptor = new Carnivore(Species.RAPTOR, true);
         raptor.setPaddock(paddock1);
         DBHelper.save(raptor);

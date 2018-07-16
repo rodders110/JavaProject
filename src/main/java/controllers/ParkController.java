@@ -21,7 +21,7 @@ public class ParkController {
 
     public static void main(String[] args) {
         VelocityTemplateEngine velocityTemplateEngine = new VelocityTemplateEngine();
-        staticFileLocation("/resources");
+        staticFileLocation("/public");
         Seeds.seedData();
         DinoController dinoController = new DinoController();
 
