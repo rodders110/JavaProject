@@ -23,6 +23,14 @@
                     <input type="submit", value="Update">
                 </form>
             </td>
+        <td>
+
+        <form action="/park/$park.getId()/addVisitor" method="post">
+            <label for="visitor">Number of Visitos </label>
+            <input type="number", name = "visitorNumber" id = "visitor">
+            <input type="submit", value="Add">
+        </form>
+        </td>
         </tr>
     #end
 </table>

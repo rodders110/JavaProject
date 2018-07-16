@@ -7,6 +7,7 @@ import db.Seeds;
 import models.Dinosaur;
 import models.Paddock;
 import models.Park;
+import models.Visitor;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
@@ -14,6 +15,7 @@ import java.util.*;
 
 
 import static spark.Spark.get;
+import static spark.Spark.modelAndView;
 import static spark.Spark.post;
 import static spark.SparkBase.staticFileLocation;
 import static spark.route.HttpMethod.get;
@@ -82,6 +84,19 @@ public class ParkController {
             model.put("park", park);
             model.put("paddocks", paddocks);
             return new ModelAndView(model, "layout.vtl");
+        }, velocityTemplateEngine);
+
+        post("/park/:id/addVisitor", (req, res) -> {
+            int id = Integer.parseInt(req.params(":id"));
+            Park park = DBHelper.find(Park.class, id);
+           for(int i = Integer.parseInt(req.queryParams("visitorNumber")); i > 0; --i){
+               Visitor visitor = new Visitor("Tommy");
+               park.addVisitor(visitor);
+               DBHelper.save(visitor);
+               DBHelper.update(park);
+           }
+            res.redirect("/");
+            return null;
         }, velocityTemplateEngine);
 
         post("/park/:id/delete", (req, res) -> {
