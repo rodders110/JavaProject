@@ -10,12 +10,15 @@
 </head>
 <body>
 
-<div class = "navigation">
-    <a href="/" name="Parks" id = "parks" type="button">Parks</a>
-    <a href="/paddocks" name="Paddocks" id = "paddocks" type="button">Paddocks</a>
-    <a href="/dinosaurs" name="Dinosaurs" id = "dinosaurs" type="button">Dinosaurs</a>
+<nav>
+    <ul class="flex-container">
 
-</div>
+        <li><a href="/" name="Parks" id = "parks" type="button">Parks</a></li>
+        <li><a href="/paddocks" name="Paddocks" id = "paddocks" type="button">Paddocks</a></li>
+        <li><a href="/dinosaurs" name="Dinosaurs" id = "dinosaurs" type="button">Dinosaurs</a></li>
+
+    </ul>
+</nav>
 
 <div class="main">
     #parse( $template )

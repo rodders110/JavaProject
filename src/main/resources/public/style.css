@@ -1,7 +1,7 @@
 body {
 
   background-color: MediumSeaGreen;
-  font-family: gill sans;
+  font-family: kongtext;
 
 }
 
@@ -14,8 +14,24 @@ nav {
 
 }
 
+ul {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding-left:0;
+  text-align: center;
+  color: lightpink;
+  font-size: 20px;
+  font-family: cocotte;
+
+}
+
 a {
 
 color: lightpink;
+font-: 20;
 
 }
