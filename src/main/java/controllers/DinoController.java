@@ -5,7 +5,7 @@ import db.DBPaddock;
 import models.*;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
-import sun.jvm.hotspot.debugger.cdbg.EnumType;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -71,6 +71,26 @@ public class DinoController {
             return new ModelAndView(model, "layout.vtl");
         }, new VelocityTemplateEngine());
 
+        get("/dinosaurs/:id/feed", (req, res) ->{
+            int dinosaurId = Integer.parseInt(req.params(":id"));
+            HashMap<String, Object> model = new HashMap<>();
+            Dinosaur dinosaur = DBHelper.find(Dinosaur.class, dinosaurId);
+            List<FoodType> food = new ArrayList<>();
+            if (dinosaur.getClass().toString().equals("class models.Herbivore")){
+                food.add(FoodType.CARROT);
+                food.add(FoodType.TURNIP);
+            } else {
+                food.add(FoodType.SHEEP);
+                food.add(FoodType.GOAT);
+            }
+            IEat hungry = (IEat) dinosaur;
+            model.put("food", food);
+            model.put("hungry", hungry);
+            model.put("dinosaur", dinosaur);
+            model.put("template", "dinosaurs/feed.vtl");
+            return new ModelAndView(model, "layout.vtl");
+        }, new VelocityTemplateEngine());
+
         post("/dinosaurs/new", (req, res) -> {
             int paddockId = Integer.parseInt(req.queryParams("paddock"));
             Paddock paddock = DBHelper.find(Paddock.class, paddockId);
@@ -105,6 +125,26 @@ public class DinoController {
 
             dinosaur.setPaddock(paddock);
 
+            DBHelper.update(dinosaur);
+            res.redirect("/dinosaurs");
+            return null;
+        }, new VelocityTemplateEngine());
+
+        post("/dinosaurs/:id/feed", (req, res) ->{
+            Enum<FoodType> foodTypeEnum;
+            int dinosaurId = Integer.parseInt(req.params(":id"));
+            Dinosaur dinosaur = DBHelper.find(Dinosaur.class, dinosaurId);
+            String food = req.queryParams("food");
+            IEat hungryDino = (IEat) dinosaur;
+            if (food.equals("Carrot")){
+                hungryDino.eat(FoodType.CARROT);
+            } else if (food.equals("Turnip")){
+                hungryDino.eat(FoodType.TURNIP);
+            }else if (food.equals("Sheep")){
+                hungryDino.eat(FoodType.SHEEP);
+            }else{
+                hungryDino.eat(FoodType.GOAT);
+            }
             DBHelper.update(dinosaur);
             res.redirect("/dinosaurs");
             return null;

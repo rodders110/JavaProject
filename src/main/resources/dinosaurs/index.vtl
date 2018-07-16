@@ -11,13 +11,29 @@
         <tr>
             <th>Species</th>
             <th>In Captivity</th>
+            <th>Belly</th>
         </tr>
         #foreach($dinosaur in $dinosaurs)
         <tr>
             <td>$dinosaur.getSpecies().getName()</td>
             <td>$dinosaur.getInCaptivity()</td>
-            <td><a href="/dinosaurs/$dinosaur.getId()">View Dinosaur</a></td>
-            <td><a href="/dinosaurs/$dinosaur.getId()/edit">Edit Dinosaur</a></td>
+            <td>$dinosaur.getBelly()</td>
+            <td>
+            <form action="/dinosaurs/$dinosaur.getId()" method="get">
+                <input type="submit" value="View Dinosaur">
+            </form>
+            </td>
+            <td>
+            <form action="/dinosaurs/$dinosaur.getId()/edit" method="get">
+                <input type="submit" value="Edit Dinosaur">
+            </form>
+            </td>
+            <td>
+                <form action="/dinosaurs/$dinosaur.getId()/feed" method="get">
+                    <input type="submit" value="Feed Me">
+                </form>
+            </td>
+
 
         </tr>
         #end
