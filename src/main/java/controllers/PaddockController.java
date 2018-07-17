@@ -3,6 +3,7 @@ package controllers;
 
 import db.DBHelper;
 import models.Paddock;
+import models.Park;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
@@ -28,10 +29,13 @@ public class PaddockController {
         }, new VelocityTemplateEngine());
 
 
-//        get("/paddocks/newPaddock", (res, req), ->{
-//            HashMap<String, Object> model = new HashMap<>();
-//
-//        }, new VelocityTemplateEngine())
+        get("/paddocks/newPaddock", (res, req) ->{
+            HashMap<String, Object> model = new HashMap<>();
+            List<Park> parks = DBHelper.getAll(Park.class);
+            model.put("template", "paddock/newPaddock.vtl");
+            model.put("parks", parks);
+            return new ModelAndView(model, "layout.vtl");
+        }, new VelocityTemplateEngine());
 
     }
 }
