@@ -131,9 +131,19 @@ font-: 20;
 
 tr.parkrow {
 
-  display: flex;
-  flex-direction: column;
-  background: url(https://i.pinimg.com/originals/b0/a3/14/b0a3148d73c66e4153f2bca0f8de9f5f.jpg);
+  text-align: left;
+
+}
+
+tr.paddockrow {
+
+  text-align: left;
+
+}
+
+tr.dinorow {
+
+  text-align: left;
 
 }
 
