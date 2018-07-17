@@ -1,14 +1,11 @@
 <p class="pageHeader">All Dinosaurs</p>
 
-<div>
-    <a href="/dinosaurs/new" class="button center">New Dinosaur</a>
-</div>
 
 <div class="container">
 
     <table>
 
-        <tr>
+        <tr class="dinorow">
             <th>Species</th>
             <th>In Captivity</th>
             <th>Belly</th>
@@ -38,4 +35,7 @@
         </tr>
         #end
     </table>
+    <form action="/dinosaurs/new" method="get">
+        <input type="submit" value="Add New Dinosaur">
+    </form>
 </div>
