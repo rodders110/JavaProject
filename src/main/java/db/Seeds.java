@@ -41,12 +41,16 @@ public class Seeds {
         DBHelper.save(steg);
 
         Visitor visitor1 = new Visitor("Curly Boy");
-        visitor1.setPark(park);
+        park.addVisitor(visitor1);
+//        visitor1.setPark(park);
         DBHelper.save(visitor1);
+        DBHelper.update(park);
 
         Visitor visitor2 = new Visitor("Curly Girl");
-        visitor2.setPark(park);
+        park.addVisitor(visitor2);
+//        visitor2.setPark(park);
         DBHelper.save(visitor2);
+        DBHelper.update(park);
 
         }
 }

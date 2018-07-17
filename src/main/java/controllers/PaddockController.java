@@ -4,6 +4,7 @@ package controllers;
 import db.DBHelper;
 import models.Paddock;
 import models.Park;
+import models.Visitor;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 

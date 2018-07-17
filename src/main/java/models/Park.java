@@ -1,5 +1,8 @@
 package models;
 
+import db.DBHelper;
+import db.DBVisitor;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -89,6 +92,7 @@ public class Park {
         this.totalVisitors++;
     }
 
+
     public void exitVisitor (Visitor visitor){
         this.visitors.remove(visitor);
     }
@@ -111,5 +115,10 @@ public class Park {
             }
         }
         return  rampage;
+    }
+
+    public int count(Park park){
+        List<Visitor> visitors = DBVisitor.allVisitors(park);
+        return visitors.size();
     }
 }

@@ -19,6 +19,7 @@ import static spark.Spark.modelAndView;
 import static spark.Spark.post;
 import static spark.SparkBase.staticFileLocation;
 import static spark.route.HttpMethod.get;
+import static spark.route.HttpMethod.patch;
 
 public class ParkController {
 
@@ -30,6 +31,7 @@ public class ParkController {
         PaddockController paddockController = new PaddockController();
 
         get ("/parks", (req, res) -> {
+            rotatingDoors();
             HashMap<String, Object> model = new HashMap<>();
             List<Park> parks = DBHelper.getAll(Park.class);
             model.put("parks", parks);
@@ -124,6 +126,23 @@ public class ParkController {
             res.redirect("/parks");
             return null;
         }, velocityTemplateEngine);
+
+    }
+
+    public static void rotatingDoors(){
+        Random r = new Random();
+        List<Visitor> visitors = DBHelper.getAll(Visitor.class);
+        if (visitors.size() > 1) {
+            int low = 1;
+            int high = visitors.size();
+            int index = r.nextInt((high - low) +1) + low;
+            if (index < visitors.size()) {
+                DBHelper.delete(visitors.get(index));
+            }
+        }
+
+
+
 
     }
 }
