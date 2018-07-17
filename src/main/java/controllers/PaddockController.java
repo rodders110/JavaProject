@@ -17,14 +17,21 @@ public class PaddockController {
         this.setupEndPoints();
     }
 
-    private void setupEndPoints(){
+    private void setupEndPoints() {
 
-    get("/paddocks", (res, req) -> {
-        HashMap<String, Object> model = new HashMap<>();
-        List<Paddock> paddocks = DBHelper.getAll(Paddock.class);
-        model.put("template", "paddock/index.vtl");
-        model.put("paddocks", paddocks);
-        return new ModelAndView(model, "layout.vtl");
-        },new VelocityTemplateEngine());
+        get("/paddocks", (res, req) -> {
+            HashMap<String, Object> model = new HashMap<>();
+            List<Paddock> paddocks = DBHelper.getAll(Paddock.class);
+            model.put("template", "paddock/index.vtl");
+            model.put("paddocks", paddocks);
+            return new ModelAndView(model, "layout.vtl");
+        }, new VelocityTemplateEngine());
+
+
+        get("/paddocks/newPaddock", (res, req), ->{
+            HashMap<String, Object> model = new HashMap<>();
+
+        }, new VelocityTemplateEngine())
+
     }
 }
