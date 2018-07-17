@@ -6,6 +6,9 @@
         <th>name</th>
         <th>Total Visited</th>
         <th>Rampage In Progress</th>
+        <th></th>
+        <th></th>
+        <th>Number of Visitors</th>
     </tr>
     #foreach ($park in $parks)
     <tr>
@@ -20,13 +23,12 @@
            </td>
             <td>
                 <form action="/park/$park.getId()/update" method="get">
-                    <input type="submit", value="Update">
+                    <input type="submit", value="View">
                 </form>
             </td>
         <td>
 
         <form action="/park/$park.getId()/addVisitor" method="post">
-            <label for="visitor">Number of Visitors </label>
             <input type="number", name = "visitorNumber" id = "visitor">
             <input type="submit", value="Add">
         </form>
