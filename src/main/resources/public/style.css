@@ -2,8 +2,13 @@ body {
 
   background-color: MediumSeaGreen;
   font-family: kongtext;
-  src: url("/kongtext.ttf")
 
+
+}
+
+@font-face{
+  font-family: kongtext;
+  src: url("/kongtext.ttf")
 }
 
 h1 {
