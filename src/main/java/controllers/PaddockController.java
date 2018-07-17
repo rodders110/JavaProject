@@ -10,6 +10,7 @@ import spark.template.velocity.VelocityTemplateEngine;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
 import static spark.Spark.get;
 import static spark.Spark.post;
@@ -23,6 +24,7 @@ public class PaddockController {
     private void setupEndPoints() {
 
         get("/paddocks", (res, req) -> {
+            randomRampage();
             HashMap<String, Object> model = new HashMap<>();
             List<Paddock> paddocks = DBHelper.getAll(Paddock.class);
             model.put("template", "paddock/index.vtl");
@@ -50,5 +52,12 @@ public class PaddockController {
             return null;
         },new VelocityTemplateEngine());
 
+    }
+
+    public static void randomRampage(){
+        List<Paddock> paddocks = DBHelper.getAll(Paddock.class);
+        Random r = new Random();
+        int index = r.nextInt(paddocks.size() - 1);
+        paddocks.get(index).rampage();
     }
 }
