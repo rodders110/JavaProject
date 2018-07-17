@@ -27,12 +27,9 @@ public class ParkController {
         staticFileLocation("/public");
         Seeds.seedData();
         DinoController dinoController = new DinoController();
+        PaddockController paddockController = new PaddockController();
 
-
-
-
-
-        get ("/", (req, res) -> {
+        get ("/parks", (req, res) -> {
             HashMap<String, Object> model = new HashMap<>();
             List<Park> parks = DBHelper.getAll(Park.class);
             model.put("parks", parks);
@@ -40,7 +37,7 @@ public class ParkController {
             return new ModelAndView(model, "layout.vtl");
         }, velocityTemplateEngine);
 
-        get ("/home", (req, res) -> {
+        get ("/", (req, res) -> {
             HashMap<String, Object> model = new HashMap<>();
             List<Park> parks = DBHelper.getAll(Park.class);
             List<Park> dinosaurs = DBHelper.getAll(Dinosaur.class);
@@ -71,7 +68,7 @@ public class ParkController {
             String name = req.queryParams("name");
             Park newPark = new Park(name);
             DBHelper.save(newPark);
-            res.redirect("/");
+            res.redirect("/parks");
             return null;
         }, velocityTemplateEngine);
 
@@ -103,7 +100,7 @@ public class ParkController {
             int id = Integer.parseInt(req.params(":id"));
             Park park = DBHelper.find(Park.class, id);
             DBHelper.delete(park);
-            res.redirect("/");
+            res.redirect("/parks");
             return null;
         }, velocityTemplateEngine);
 
@@ -113,7 +110,7 @@ public class ParkController {
             Park park = DBHelper.find(Park.class, id);
             park.setName(newName);
             DBHelper.update(park);
-            res.redirect("/");
+            res.redirect("/parks");
             return null;
         }, velocityTemplateEngine);
 
@@ -124,7 +121,7 @@ public class ParkController {
             Paddock newPad = new Paddock(newPadNum);
             newPad.setPark(park);
             DBHelper.save(newPad);
-            res.redirect("/");
+            res.redirect("/parks");
             return null;
         }, velocityTemplateEngine);
 

@@ -19,10 +19,10 @@ public class PaddockController {
 
     private void setupEndPoints(){
 
-    get("/paddocs", (res, req) -> {
+    get("/paddocks", (res, req) -> {
         HashMap<String, Object> model = new HashMap<>();
         List<Paddock> paddocks = DBHelper.getAll(Paddock.class);
-        model.put("template", "paddocks/index.vtl");
+        model.put("template", "paddock/index.vtl");
         model.put("paddocks", paddocks);
         return new ModelAndView(model, "layout.vtl");
         },new VelocityTemplateEngine());

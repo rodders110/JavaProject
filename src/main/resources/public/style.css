@@ -69,33 +69,33 @@ justify-content: space-around;
 
 }
 
-.parks {
+.parklink {
 
   display: flex;
 
-  background-image: url(https://steamusercontent-a.akamaihd.net/ugc/100601983096545782/129AB940056CC6589E348EF94F4E9F05525C5F35/);
+  background-image: url(https://78.media.tumblr.com/9f2815d5221f7d13a00fab8ea23b753a/tumblr_pbz8sf2tFz1ug998ko1_250.png);
     background-repeat: no-repeat;
     width: 300px;
     height: 300px;
 
 }
 
-.paddocks {
+.paddockslink {
 
   display: flex;
 
-  background-image: url(https://steamusercontent-a.akamaihd.net/ugc/100601983096545782/129AB940056CC6589E348EF94F4E9F05525C5F35/);
+  background-image: url(https://78.media.tumblr.com/2c2ee0ebadee39e3bd0e41bde9282d1f/tumblr_pbz8rnHqrC1ug998ko1_250.gif);
     background-repeat: no-repeat;
     width: 300px;
     height: 300px;
 
 }
 
-.dinosaurs {
+.dinosaurslink {
 
   display: flex;
 
-  background-image: url(https://i.pinimg.com/736x/bd/76/34/bd763497fff559954cba0eacbd2198cd--perler-beads-bead-patterns.jpg);
+  background-image: url(https://78.media.tumblr.com/6dbd571900c6875b97c2686594cca9ae/tumblr_pbz8ti7Zjv1ug998ko1_250.png);
     background-repeat: no-repeat;
     width: 300px;
     height: 300px;
