@@ -3,12 +3,14 @@
   src: url("/kongtext.ttf")
 }
 
-
 body {
 
   background-color: MediumSeaGreen;
   font-family: kongtext;
-
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 
 }
 
@@ -17,25 +19,31 @@ input[type=submit]{
     font-family: kongtext;
 }
 
-
-
 h1 {
 
+display: flex;
+justify-content: center;
 font-family: kongtext;
-font-size: 40px;
+font-size: 50px;
+
 
 }
 
 nav {
 
-  height: 100px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: black;
+    border-radius: 20px;
+    border-width: 3px;
+    border-style: solid;
+    padding-top: 15px;
 
 }
-
-
 
 ul {
 
@@ -77,9 +85,14 @@ font-: 20;
 
 .homepage {
 
-display: flex;
-flex-direction: row;
-justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-style: solid;
+  border-radius: 50px;
+  padding-top: 60px;
+  padding-left: 15px;
+  padding-right: 15px;
 
 }
 
