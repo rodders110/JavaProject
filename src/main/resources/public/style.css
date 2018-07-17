@@ -138,6 +138,22 @@ font-size: smaller;
 
 }
 
+.livefeed {
+
+display: flex;
+justify-content: center;
+flex-direction: column;
+
+
+}
+
+.feedimg {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 tr.parkrow {
 
   text-align: left;
@@ -153,6 +169,12 @@ tr.paddockrow {
 tr.dinorow {
 
   text-align: left;
+
+}
+
+tr.red {
+
+color: red;
 
 }
 

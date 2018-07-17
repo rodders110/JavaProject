@@ -7,7 +7,7 @@
             <th>Park:</th>
         </tr>
         #foreach ($paddock in $paddocks)
-        <tr>
+        <tr class = #if($paddock.getIntegrity()<20)"red"#end>
             <td>$paddock.getNumber()</td>
             <td>$paddock.getIntegrity()</td>
             <td>$paddock.getPark().getName()</td>

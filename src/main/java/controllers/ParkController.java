@@ -51,6 +51,12 @@ public class ParkController {
             return new ModelAndView(model, "layout.vtl");
         }, velocityTemplateEngine);
 
+        get ("/livefeed", (req, res) -> {
+            HashMap<String, Object> model = new HashMap<>();
+            model.put("template", "livefeed.vtl");
+            return new ModelAndView(model, "layout.vtl");
+        }, velocityTemplateEngine);
+
         get("/park/:id/newPaddock", (req, res) -> {
             int id = Integer.parseInt(req.params(":id"));
             HashMap<String, Object> model = new HashMap<>();
