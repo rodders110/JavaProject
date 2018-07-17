@@ -81,11 +81,11 @@ public abstract class Dinosaur {
         List<Dinosaur> dinosaurs = DBPaddock.getDinosInPaddock(paddock);
 
         if ((dinosaurs.size() == 0) || (dinosaurs.get(0).getClass() == this.getClass())) {
-            if((dinosaurs.size() == 0)||(this.getClass().toString().equals("class models.Herbivore"))|| (this.species == dinosaurs.get(0).species)) {
+            if((dinosaurs.size() == 0)||(this.getClass().toString().equals("class models.Herbivore"))|| (this.getSpecies() == dinosaurs.get(0).getSpecies())) {
                 this.paddock = paddock;
             }
 
-            this.paddock = paddock;
+//            this.paddock = paddock;
 
         }
     }
