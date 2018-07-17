@@ -6,6 +6,10 @@ body {
 
 }
 
+input{
+    font-family: kongtext;
+}
+
 @font-face{
   font-family: kongtext;
   src: url("/kongtext.ttf")

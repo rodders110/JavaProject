@@ -92,7 +92,7 @@ public class ParkController {
                DBHelper.save(visitor);
                DBHelper.update(park);
            }
-            res.redirect("/");
+            res.redirect("/parks");
             return null;
         }, velocityTemplateEngine);
 
