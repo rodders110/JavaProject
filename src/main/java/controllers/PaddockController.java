@@ -28,10 +28,10 @@ public class PaddockController {
         }, new VelocityTemplateEngine());
 
 
-        get("/paddocks/newPaddock", (res, req), ->{
-            HashMap<String, Object> model = new HashMap<>();
-
-        }, new VelocityTemplateEngine())
+//        get("/paddocks/newPaddock", (res, req), ->{
+//            HashMap<String, Object> model = new HashMap<>();
+//
+//        }, new VelocityTemplateEngine())
 
     }
 }

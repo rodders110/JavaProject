@@ -1,3 +1,9 @@
+@font-face{
+  font-family: kongtext;
+  src: url("/kongtext.ttf")
+}
+
+
 body {
 
   background-color: MediumSeaGreen;
@@ -6,14 +12,12 @@ body {
 
 }
 
-input{
+input[type=submit]{
+    -webkit-appearance: none;
     font-family: kongtext;
 }
 
-@font-face{
-  font-family: kongtext;
-  src: url("/kongtext.ttf")
-}
+
 
 h1 {
 
