@@ -15,7 +15,9 @@
             <td>$park.getName()</td>
             <td>$park.getTotalVisitors()</td>
             <td>$park.count($park)</td>
-            <td>$park.isRampage()</td>
+            <td>#if($park.isRampage() == true)YES#end
+                #if($park.isRampage() == false)NO#end
+            </td>
            <td>
                <form action="/park/$park.getId()/delete" method="post">
                    <input type="submit", value="Delete">
