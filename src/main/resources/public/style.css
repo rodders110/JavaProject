@@ -9,7 +9,7 @@ body {
   font-family: kongtext;
   padding-left: 60px;
   padding-right: 60px;
-  padding-top: 20px;
+
   padding-bottom: 20px;
 
 }
@@ -33,7 +33,7 @@ nav {
 
     display: flex;
     justify-content: center;
-    height: 80px;
+    height: 60px;
     margin-bottom: 30px;
     margin-left: 10px;
     margin-right: 10px;
@@ -41,7 +41,7 @@ nav {
     border-radius: 20px;
     border-width: 3px;
     border-style: solid;
-    padding-top: 15px;
+
 
 }
 
@@ -79,7 +79,14 @@ li {
 a {
 
 color: lightpink;
-font-: 20;
+font-size: 20;
+text-decoration: none;
+
+}
+
+.welcometext {
+
+font-size: smaller;
 
 }
 
@@ -90,7 +97,8 @@ font-: 20;
   justify-content: space-around;
   border-style: solid;
   border-radius: 50px;
-  padding-top: 60px;
+  padding-top: 20px;
+  padding-bottom: 40px;
   padding-left: 15px;
   padding-right: 15px;
 
@@ -99,33 +107,34 @@ font-: 20;
 .parklink {
 
   display: flex;
+  text-align: center;
 
-  background-image: url(https://78.media.tumblr.com/9f2815d5221f7d13a00fab8ea23b753a/tumblr_pbz8sf2tFz1ug998ko1_250.png);
     background-repeat: no-repeat;
-    width: 300px;
-    height: 300px;
+    width: 225px;
+    height: 225px;
 
 }
 
 .paddockslink {
 
   display: flex;
+  text-align: center;
 
-  background-image: url(https://78.media.tumblr.com/2c2ee0ebadee39e3bd0e41bde9282d1f/tumblr_pbz8rnHqrC1ug998ko1_250.gif);
     background-repeat: no-repeat;
-    width: 300px;
-    height: 300px;
+    width: 225px;
+    height: 225px;
 
 }
 
 .dinosaurslink {
 
   display: flex;
+  text-align: center;
 
-  background-image: url(https://78.media.tumblr.com/6dbd571900c6875b97c2686594cca9ae/tumblr_pbz8ti7Zjv1ug998ko1_250.png);
+
     background-repeat: no-repeat;
-    width: 300px;
-    height: 300px;
+    width: 225px;
+    height: 225px;
 
 }
 
