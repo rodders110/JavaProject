@@ -42,6 +42,15 @@ public class PaddockController {
             return new ModelAndView(model, "layout.vtl");
         }, new VelocityTemplateEngine());
 
+
+        post("/paddock/:id/delete", (req, res) -> {
+            int paddockId = Integer.parseInt(req.params(":id"));
+            Paddock newPad = DBHelper.find(Paddock.class, paddockId);
+            DBHelper.delete(newPad);
+            res.redirect("/paddocks");
+            return null;
+        },new VelocityTemplateEngine());
+
         post("/paddock/:id/repair", (req, res) -> {
             int paddockId = Integer.parseInt(req.params(":id"));
             Paddock newPad = DBHelper.find(Paddock.class, paddockId);

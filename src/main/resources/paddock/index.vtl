@@ -15,6 +15,11 @@
             <td>$paddock.getIntegrity()</td>
             <td>$paddock.getPark().getName()</td>
             <td>
+                <form action="/paddock/$paddock.getId()/delete" class = "delete_paddock"method="post">
+                    <input type="submit" value = "Delete" class = "Delete paddock">
+                </form>
+            </td>
+            <td>
                 <form action="/paddock/$paddock.getId()/repair" class = "repair_paddock"method="post">
                     <input type="submit" value = "Repair" class = "Repair paddock">
                 </form>
