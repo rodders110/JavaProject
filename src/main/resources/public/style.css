@@ -73,14 +73,27 @@ a:hover {
 
 li {
 
-  margin: 0 10px 10px 0;
+  margin: 0 40px 40px 0;
 }
 
 a {
 
-color: lightpink;
+color: aquamarine;
 font-size: 20;
 text-decoration: none;
+text-shadow: 3px 3px darkslategrey;
+
+}
+
+table {
+
+  border-style: solid;
+    border-color: black;
+    border-radius: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
 
 }
 
@@ -144,14 +157,37 @@ display: flex;
 justify-content: center;
 flex-direction: column;
 
-
 }
+
 
 .feedimg {
 
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+
+  border-style: solid;
+  border-radius: 60px;
+}
+
+.footimg {
+
+height: 100px;
+width: 100px;
+
+}
+
+.pageHeader {
+
+}
+
+th {
+
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
 }
 
 tr.parkrow {

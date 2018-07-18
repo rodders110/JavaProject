@@ -34,6 +34,9 @@ public class ParkController {
             rotatingDoors();
             HashMap<String, Object> model = new HashMap<>();
             List<Park> parks = DBHelper.getAll(Park.class);
+            for (Park park : parks){
+                park.checkRampage();
+            }
             model.put("parks", parks);
             model.put("template", "park/index.vtl");
             return new ModelAndView(model, "layout.vtl");

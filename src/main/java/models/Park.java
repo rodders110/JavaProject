@@ -1,7 +1,6 @@
 package models;
 
-import db.DBHelper;
-import db.DBVisitor;
+import db.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -108,13 +107,28 @@ public class Park {
         }
     }
 
-    public boolean checkRampage(){
-        for (Paddock paddock : paddocks){
+    public void checkRampage(){
+        List<Paddock> paddocksList = DBPaddock.allPaddocks(this);
+        List<Visitor> visitors = DBVisitor.allVisitors(this);
+        for (Paddock paddock : paddocksList){
             if (paddock.getIntegrity() <= 0){
+                List<Dinosaur> dinosaurs = DBPaddock.getDinosInPaddock(paddock);
+                for (Dinosaur dino : dinosaurs){
+
+
+                   String check = dino.getSpecies().toString();
+                    if (dino.getClass().toString().equals("class models.Carnivore")) {
+                        dino.setBelly(19);
+                    }
+                    dino.setInCaptivity(false);
+                    DBHelper.update(dino);
+                }
                 this.setRampage(true);
+                for (Visitor visitor : visitors){
+                    DBHelper.delete(visitor);
+                }
             }
         }
-        return  rampage;
     }
 
     public int count(Park park){
