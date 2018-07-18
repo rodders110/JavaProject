@@ -1,4 +1,4 @@
-<p class="pageHeader">View Dinosaur</p>
+<h2 class="pageHeader">View Dinosaur</h2>
 
 <form action="/dinosaurs/$dinosaur.getId()" method="get">
 
@@ -19,6 +19,10 @@
         </table>
     </div>
 </form>
+<form action="$dinosaur.species.getInfo()" method="post">
+    <input type="submit" value="More Info" class="button"/>
+</form>
 <form action="/dinosaurs/$dinosaur.getId()/delete" method="post">
     <input type="submit" value="Delete" class="button"/>
 </form>
+
