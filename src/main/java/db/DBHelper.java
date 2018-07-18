@@ -84,8 +84,6 @@ public class DBHelper {
         } finally {
             session.close();
         }
-
-
         return results;
     }
 
