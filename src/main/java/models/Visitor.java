@@ -1,6 +1,9 @@
 package models;
 
+import db.DBHelper;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="visitors")
@@ -55,5 +58,10 @@ public class Visitor {
 
     public void setPark(Park park) {
         this.park = park;
+    }
+
+    private int count(Park park){
+        List<Visitor> visitors = DBHelper.find(Visitor.class, park.getId());
+        return visitors.size();
     }
 }

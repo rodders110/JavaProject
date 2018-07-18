@@ -1,0 +1,27 @@
+<h3>Update Park</h3>
+<br/>
+<br/>
+<form action="/park/$park.getId()/update" class="park_name" method="post">
+
+    <label for="park_name">Name:</label>
+    <input type="textBox" value="$park.getName()" name="name" id="park_name">
+    <input type="submit" value ="Update" class="Save">
+
+
+</form>
+
+<table>
+    <tr>
+        <th>Paddocks</th>
+    </tr>
+
+    #foreach ($paddock in $paddocks)
+    <tr>
+        <td>$paddock.getNumber()</td>
+    </tr>
+    #end
+</table>
+
+<form action="/park/$park.getId()/newPaddock" class = "new_paddock"method="get">
+    <input type="submit" value = "add new paddock" class = "new paddock">
+</form>

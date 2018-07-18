@@ -1,0 +1,27 @@
+<div id="paddocks">
+
+    <table>
+        <tr>
+            <th>Paddock No:</th>
+            <th>Park:</th>
+        </tr>
+        <tr>
+            <td>
+                <form action="/paddock/paddock/new" method="post">
+                    <input type="number" name="pad_num" id = "pad_num">
+                </td>
+            <td>
+                    <select name="park_id" id="park_id">
+                        #foreach ($park in $parks)
+                        <option value="$park.getId()">$park.getName()</option>
+                        #end
+                    </select>
+                <input type="submit", value="Add">
+                </form>
+            </td>
+        </tr>
+    </table>
+
+
+
+</div>

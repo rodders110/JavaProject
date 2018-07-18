@@ -1,0 +1,25 @@
+<h2 class="pageHeader">All Paddocks</h2>
+
+
+<div id="paddocks">
+
+    <table>
+        <tr class="paddockrow">
+            <th>Paddock No:</th>
+            <th>Integrity:</th>
+            <th>Park:</th>
+        </tr>
+        #foreach ($paddock in $paddocks)
+        <tr class = #if($paddock.getIntegrity()<20)"red"#end>
+            <td>$paddock.getNumber()</td>
+            <td>$paddock.getIntegrity()</td>
+            <td>$paddock.getPark().getName()</td>
+        </tr>
+        #end
+    </table>
+    <form action="/paddocks/newPaddock" class = "new_paddock"method="get">
+        <input type="submit" value = "add new paddock" class = "new paddock">
+    </form>
+
+
+</div>

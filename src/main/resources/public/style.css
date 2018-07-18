@@ -1,0 +1,221 @@
+@font-face{
+  font-family: kongtext;
+  src: url("/kongtext.ttf")
+}
+
+body {
+
+  background-color: MediumSeaGreen;
+  font-family: kongtext;
+  padding-left: 60px;
+  padding-right: 60px;
+
+  padding-bottom: 20px;
+
+}
+
+input[type=submit]{
+    -webkit-appearance: none;
+    font-family: kongtext;
+}
+
+h1 {
+
+display: flex;
+justify-content: center;
+font-family: kongtext;
+font-size: 50px;
+
+
+}
+
+nav {
+
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: black;
+    border-radius: 20px;
+    border-width: 3px;
+    border-style: solid;
+
+
+}
+
+ul {
+
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 10;
+  padding-left:0;
+  text-align: center;
+  color: lightpink;
+  font-size: 20px;
+  font-family: kongtext;
+
+}
+
+ul a:hover {
+
+  opacity: 0.6;
+
+}
+
+a:hover {
+
+  opacity: 0.6;
+
+}
+
+li {
+
+  margin: 0 40px 40px 0;
+}
+
+a {
+
+color: aquamarine;
+font-size: 20;
+text-decoration: none;
+text-shadow: 3px 3px darkslategrey;
+
+}
+
+table {
+
+  border-style: solid;
+    border-color: black;
+    border-radius: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+}
+
+.welcometext {
+
+font-size: smaller;
+
+}
+
+.homepage {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-style: solid;
+  border-radius: 50px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+}
+
+.parklink {
+
+  display: flex;
+  text-align: center;
+
+    background-repeat: no-repeat;
+    width: 225px;
+    height: 225px;
+
+}
+
+.paddockslink {
+
+  display: flex;
+  text-align: center;
+
+    background-repeat: no-repeat;
+    width: 225px;
+    height: 225px;
+
+}
+
+.dinosaurslink {
+
+  display: flex;
+  text-align: center;
+
+
+    background-repeat: no-repeat;
+    width: 225px;
+    height: 225px;
+
+}
+
+.livefeed {
+
+display: flex;
+justify-content: center;
+flex-direction: column;
+
+}
+
+
+.feedimg {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  border-style: solid;
+  border-radius: 60px;
+}
+
+.footimg {
+
+height: 100px;
+width: 100px;
+
+}
+
+.pageHeader {
+
+}
+
+th {
+
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
+}
+
+tr.parkrow {
+
+  text-align: left;
+
+}
+
+tr.paddockrow {
+
+  text-align: left;
+
+}
+
+tr.dinorow {
+
+  text-align: left;
+
+}
+
+tr.red {
+
+color: red;
+
+}
+
+footer {
+
+/* background-image: url(https://78.media.tumblr.com/922f61aa75d33cc9ec2fde794450994d/tumblr_njky6hhgP01sdw37zo1_1280.gif); */
+
+}

@@ -56,7 +56,8 @@ public class Paddock {
 
     public void addDinosaur(Dinosaur dinosaur){
         this.dinosaurs.add(dinosaur);
-    }
+        }
+
 
     public void removeDinosaur(Dinosaur dinosaur){
         this.dinosaurs.remove(dinosaur);
@@ -71,11 +72,13 @@ public class Paddock {
         this.integrity = integrity;
     }
 
-//    public void rampage(){
-//        for (Dinosaur dino : this.dinosaurs){
-//            this.integrity -= dino.getSpecies().getAggression();
-//        }
-//    }
+    public void rampage(){
+        List<Dinosaur> dinosaurs = DBPaddock.getDinosInPaddock(this);
+        for (Dinosaur dino : dinosaurs){
+            this.integrity -= dino.getSpecies().getAggression();
+            DBHelper.update(this);
+        }
+    }
 
     @ManyToOne
     @JoinColumn(name="park_id", nullable = false)
@@ -86,4 +89,5 @@ public class Paddock {
     public void setPark(Park park) {
         this.park = park;
     }
+
 }

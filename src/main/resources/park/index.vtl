@@ -1,0 +1,48 @@
+<h2 class="pageHeader">All Parks</h2>
+
+
+<div id="parks">
+
+    <table>
+    <tr class="parkrow">
+        <th>Name</th>
+        <th>Total Visitors</th>
+        <th>Current Visitors</th>
+        <th>Rampage In Progress</th>
+        <th></th>
+        <th></th>
+        <th>Number of Visitors</th>
+    </tr>
+    #foreach ($park in $parks)
+    <tr>
+            <td>$park.getName()</td>
+            <td>$park.getTotalVisitors()</td>
+            <td>$park.count($park)</td>
+            <td>#if($park.isRampage() == true)YES#end
+                #if($park.isRampage() == false)NO#end
+            </td>
+           <td>
+               <form action="/park/$park.getId()/delete" method="post">
+                   <input type="submit", value="Delete">
+               </form>
+
+           </td>
+            <td>
+                <form action="/park/$park.getId()/update" method="get">
+                    <input type="submit", value="View">
+                </form>
+            </td>
+        <td>
+
+        <form action="/park/$park.getId()/addVisitor" method="post">
+            <input type="number", name = "visitorNumber" id = "visitor">
+            <input type="submit", value="Add">
+        </form>
+        </td>
+        </tr>
+    #end
+</table>
+
+
+
+</div>

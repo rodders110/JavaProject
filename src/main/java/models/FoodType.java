@@ -1,5 +1,7 @@
 package models;
 
+import java.util.ArrayList;
+
 public enum FoodType {
 
     GOAT("Goat", "meat"),
@@ -30,4 +32,6 @@ public enum FoodType {
     public void setType(String type) {
         this.type = type;
     }
+
+
 }

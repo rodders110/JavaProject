@@ -1,0 +1,21 @@
+<p class="pageHeader">New Dinosaur</p>
+
+<form action="/dinosaurs/new" method="post">
+
+    <label for="species">Species:</label>
+    <select id="species" name="species">
+        #foreach($key in $species.keySet())
+        <option value="$species.get($key)">$key</option>
+        #end
+    </select>
+
+    <label for="paddock">Paddock:</label>
+    <select id="paddock" name="paddock">
+        #foreach($paddock in $paddocks)
+        <option value="$paddock.getId()">$paddock.getNumber()</option>
+        #end
+    </select>
+
+    <input type="submit" value="Save" class="button"/>
+
+</form>
