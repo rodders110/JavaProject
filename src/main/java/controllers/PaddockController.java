@@ -2,6 +2,7 @@ package controllers;
 
 
 import db.DBHelper;
+import db.DBPaddock;
 import models.Paddock;
 import models.Park;
 import models.Visitor;
@@ -41,6 +42,15 @@ public class PaddockController {
             return new ModelAndView(model, "layout.vtl");
         }, new VelocityTemplateEngine());
 
+        post("/paddock/:id/repair", (req, res) -> {
+            int paddockId = Integer.parseInt(req.params(":id"));
+            Paddock newPad = DBHelper.find(Paddock.class, paddockId);
+            newPad.setIntegrity(100);
+            DBHelper.update(newPad);
+            res.redirect("/paddocks");
+            return null;
+        },new VelocityTemplateEngine());
+
         post("/paddock/paddock/new", (req, res) -> {
             int parkId = Integer.parseInt(req.queryParams("park_id"));
             int newPadNum = Integer.parseInt(req.queryParams("pad_num"));
@@ -51,6 +61,8 @@ public class PaddockController {
             res.redirect("/paddocks");
             return null;
         },new VelocityTemplateEngine());
+
+
 
     }
 
