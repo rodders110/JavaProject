@@ -1,6 +1,7 @@
 package db;
 
 import org.hibernate.*;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 import java.util.List;
@@ -76,6 +77,7 @@ public class DBHelper {
         List<T> results = null;
         try {
             Criteria cr = session.createCriteria(classType);
+            cr.addOrder(Order.asc("id"));
             results = cr.list();
         } catch (HibernateException e) {
             e.printStackTrace();
