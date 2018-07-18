@@ -82,10 +82,8 @@ public class DBHelper {
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
-            session.close();u
+            session.close();
         }
-
-
         return results;
     }
 
