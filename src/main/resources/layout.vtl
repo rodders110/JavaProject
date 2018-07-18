@@ -8,9 +8,16 @@
     <title>Mesozoic Park</title>
     <link rel="stylesheet" href="/style.css"/>
 </head>
+
+#foreach ($paddock in $paddocks)
+<div class =#if($paddock.getIntegrity()<20)"red"#end>
+    #end
+
 <body>
 
+
 <h1>Mesozoic Park</h1>
+
 
 <nav>
     <ul class="flex-container">
@@ -24,9 +31,11 @@
     </ul>
 </nav>
 
+
 <div class="main">
     #parse( $template )
 </div>
+
 
 <footer>
 
@@ -35,4 +44,7 @@
 </footer>
 
 </body>
+
+</div>
+
 </html>

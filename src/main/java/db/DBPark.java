@@ -5,6 +5,7 @@ import models.Park;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class DBPark {
         try{
             Criteria cr = session.createCriteria(Paddock.class);
             cr.add(Restrictions.eq("park_id", park.getId()));
+            cr.addOrder(Order.asc("id"));
             result = cr.list();
         } catch (HibernateException e){
             e.printStackTrace();

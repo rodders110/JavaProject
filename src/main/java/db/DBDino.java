@@ -5,8 +5,11 @@ import models.Dinosaur;
 import models.Paddock;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
+import javax.persistence.Id;
+import javax.persistence.OrderBy;
 import java.util.List;
 
 public class DBDino {
@@ -19,6 +22,7 @@ public class DBDino {
         try{
             Criteria cr = session.createCriteria(Dinosaur.class);
             cr.add(Restrictions.eq("id", paddock.getId()));
+            cr.addOrder(Order.desc("id"));
             results = cr.list();
         } catch(HandlerException e){
             e.printStackTrace();

@@ -14,6 +14,12 @@ body {
 
 }
 
+div.red {
+
+background-color: darkred;
+
+}
+
 input[type=submit]{
     -webkit-appearance: none;
     font-family: kongtext;
