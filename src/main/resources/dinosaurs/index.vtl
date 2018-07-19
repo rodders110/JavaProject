@@ -26,6 +26,11 @@
             </form>
             </td>
             <td>
+                <form action="/dinosaurs/$dinosaur.getId()/delete" method="post">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+            <td>
                 <form action="/dinosaurs/$dinosaur.getId()/feed" method="get">
                     <input type="submit" value="Feed Me">
                 </form>
